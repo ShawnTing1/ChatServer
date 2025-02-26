@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/dingshuo/chat_server/build/src/server",
+  "command": "/usr/bin/g++-8   -I/home/dingshuo/chat_server/include -I/home/dingshuo/chat_server/include/server   -g -g   -o CMakeFiles/ChatServer.dir/chatserver.cpp.o -c /home/dingshuo/chat_server/src/server/chatserver.cpp",
+  "file": "/home/dingshuo/chat_server/src/server/chatserver.cpp"
+},
+{
+  "directory": "/home/dingshuo/chat_server/build/src/server",
+  "command": "/usr/bin/g++-8   -I/home/dingshuo/chat_server/include -I/home/dingshuo/chat_server/include/server   -g -g   -o CMakeFiles/ChatServer.dir/main.cpp.o -c /home/dingshuo/chat_server/src/server/main.cpp",
+  "file": "/home/dingshuo/chat_server/src/server/main.cpp"
+}
+]

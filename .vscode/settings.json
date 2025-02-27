@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.vue": "html",
+        "any": "cpp",
+        "limits": "cpp",
+        "memory": "cpp",
+        "type_traits": "cpp",
+        "valarray": "cpp",
+        "vector": "cpp"
+    }
+}

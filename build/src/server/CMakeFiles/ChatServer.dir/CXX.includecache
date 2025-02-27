@@ -21,8 +21,20 @@ functional
 -
 unordered_map
 -
+mutex
+-
 json.hpp
 ../include/server/json.hpp
+usermodel.hpp
+../include/server/usermodel.hpp
+
+../include/server/user.hpp
+string
+-
+
+../include/server/usermodel.hpp
+user.hpp
+../include/server/user.hpp
 
 ../thirdparty/json.hpp
 algorithm
@@ -426,11 +438,5 @@ chatservice.hpp
 public.hpp
 /home/dingshuo/Chat_Server/src/server/public.hpp
 muduo/base/Logging.h
--
-
-/home/dingshuo/Chat_Server/src/server/main.cpp
-chatserver.hpp
-/home/dingshuo/Chat_Server/src/server/chatserver.hpp
-iostream
 -
 

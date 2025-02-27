@@ -3,6 +3,7 @@
 #include "chatservice.hpp"
 
 #include <functional>
+#include <muduo/base/Logging.h>
 
 using namespace std;
 using namespace placeholders;

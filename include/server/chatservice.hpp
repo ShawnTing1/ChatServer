@@ -9,6 +9,7 @@
 #include "json.hpp"
 #include "usermodel.hpp"
 #include "offlinemessagemodel.hpp"
+#include "friendmodel.hpp"
 
 using namespace std;
 using namespace muduo;
@@ -31,6 +32,8 @@ public:
     void reg(const TcpConnectionPtr &conn, json &js, Timestamp time);
     // 一对一聊天业务
     void oneChat(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    // 添加好友业务
+    void addFriend(const TcpConnectionPtr &conn, json &js, Timestamp time);
     // 处理客户端异常退出
     void clientCloseException(const TcpConnectionPtr &conn);
     // 服务器重置，业务重置
@@ -54,6 +57,9 @@ private:
 
     // 存储离线消息的对象
     OfflineMsgModel _offlineMsgModel;
+
+    // 存储好友列表
+    FriendModel _friendModel;
 };
 
 #endif

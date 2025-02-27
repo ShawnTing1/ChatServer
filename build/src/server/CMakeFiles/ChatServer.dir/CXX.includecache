@@ -8,12 +8,6 @@
 
 ../include/public.hpp
 
-../include/server/chatserver.hpp
-muduo/net/TcpServer.h
--
-muduo/net/EventLoop.h
--
-
 ../include/server/chatservice.hpp
 muduo/net/TcpConnection.h
 -
@@ -29,12 +23,14 @@ usermodel.hpp
 ../include/server/usermodel.hpp
 offlinemessagemodel.hpp
 ../include/server/offlinemessagemodel.hpp
+friendmodel.hpp
+../include/server/friendmodel.hpp
 
-../include/server/db/db.h
-mysql/mysql.h
+../include/server/friendmodel.hpp
+vector
 -
-string
--
+user.hpp
+../include/server/user.hpp
 
 ../include/server/offlinemessagemodel.hpp
 vector
@@ -436,16 +432,6 @@ any
 string_view
 -
 
-/home/dingshuo/Chat_Server/src/server/chatserver.cpp
-chatserver.hpp
-/home/dingshuo/Chat_Server/src/server/chatserver.hpp
-json.hpp
-/home/dingshuo/Chat_Server/src/server/json.hpp
-chatservice.hpp
-/home/dingshuo/Chat_Server/src/server/chatservice.hpp
-functional
--
-
 /home/dingshuo/Chat_Server/src/server/chatservice.cpp
 chatservice.hpp
 /home/dingshuo/Chat_Server/src/server/chatservice.hpp
@@ -454,23 +440,5 @@ public.hpp
 muduo/base/Logging.h
 -
 vector
--
-
-/home/dingshuo/Chat_Server/src/server/main.cpp
-chatserver.hpp
-/home/dingshuo/Chat_Server/src/server/chatserver.hpp
-chatservice.hpp
-/home/dingshuo/Chat_Server/src/server/chatservice.hpp
-iostream
--
-signal.h
--
-
-/home/dingshuo/Chat_Server/src/server/usermodel.cpp
-usermodel.hpp
-/home/dingshuo/Chat_Server/src/server/usermodel.hpp
-db.h
-/home/dingshuo/Chat_Server/src/server/db.h
-iostream
 -
 

@@ -145,8 +145,8 @@ void ChatService::clientCloseException(const TcpConnectionPtr& conn)
 
 void ChatService::oneChat(const TcpConnectionPtr &conn, json &js, Timestamp time)
 {
-    // LOG_INFO << "Received JSON: " << js.dump();
-    int toid = js["to"].get<int>();
+    LOG_INFO << "Received JSON: " << js.dump();
+    int toid = js["toid"].get<int>();
     {
         lock_guard<mutex> lock(_connMutex);
         auto it = _userConnMap.find(toid);

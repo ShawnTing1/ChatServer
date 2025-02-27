@@ -1,4 +1,4 @@
-# Install script for directory: /home/dingshuo/chat_server/src/server
+# Install script for directory: /home/dingshuo/Chat_Server/src/server
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

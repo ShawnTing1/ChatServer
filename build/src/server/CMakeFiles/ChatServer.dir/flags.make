@@ -6,5 +6,5 @@ CXX_FLAGS =  -g -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/dingshuo/chat_server/include -I/home/dingshuo/chat_server/include/server 
+CXX_INCLUDES = -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/thirdparty 
 

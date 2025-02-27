@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dingshuo/chat_server
+CMAKE_SOURCE_DIR = /home/dingshuo/Chat_Server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dingshuo/chat_server/build
+CMAKE_BINARY_DIR = /home/dingshuo/Chat_Server/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/dingshuo/chat_server/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/dingshuo/chat_server/build/CMakeFiles /home/dingshuo/chat_server/build/src/server/CMakeFiles/progress.marks
-	cd /home/dingshuo/chat_server/build && $(MAKE) -f CMakeFiles/Makefile2 src/server/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dingshuo/chat_server/build/CMakeFiles 0
+	cd /home/dingshuo/Chat_Server/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/dingshuo/Chat_Server/build/CMakeFiles /home/dingshuo/Chat_Server/build/src/server/CMakeFiles/progress.marks
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f CMakeFiles/Makefile2 src/server/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dingshuo/Chat_Server/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/dingshuo/chat_server/build && $(MAKE) -f CMakeFiles/Makefile2 src/server/clean
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f CMakeFiles/Makefile2 src/server/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/dingshuo/chat_server/build && $(MAKE) -f CMakeFiles/Makefile2 src/server/preinstall
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f CMakeFiles/Makefile2 src/server/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/dingshuo/chat_server/build && $(MAKE) -f CMakeFiles/Makefile2 src/server/preinstall
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f CMakeFiles/Makefile2 src/server/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/dingshuo/chat_server/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/dingshuo/Chat_Server/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/server/CMakeFiles/ChatServer.dir/rule:
-	cd /home/dingshuo/chat_server/build && $(MAKE) -f CMakeFiles/Makefile2 src/server/CMakeFiles/ChatServer.dir/rule
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f CMakeFiles/Makefile2 src/server/CMakeFiles/ChatServer.dir/rule
 .PHONY : src/server/CMakeFiles/ChatServer.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ ChatServer: src/server/CMakeFiles/ChatServer.dir/rule
 
 # fast build rule for target.
 ChatServer/fast:
-	cd /home/dingshuo/chat_server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/build
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/build
 .PHONY : ChatServer/fast
 
 chatserver.o: chatserver.cpp.o
@@ -131,7 +131,7 @@ chatserver.o: chatserver.cpp.o
 
 # target to build an object file
 chatserver.cpp.o:
-	cd /home/dingshuo/chat_server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o
 .PHONY : chatserver.cpp.o
 
 chatserver.i: chatserver.cpp.i
@@ -140,7 +140,7 @@ chatserver.i: chatserver.cpp.i
 
 # target to preprocess a source file
 chatserver.cpp.i:
-	cd /home/dingshuo/chat_server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.i
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.i
 .PHONY : chatserver.cpp.i
 
 chatserver.s: chatserver.cpp.s
@@ -149,8 +149,35 @@ chatserver.s: chatserver.cpp.s
 
 # target to generate assembly for a file
 chatserver.cpp.s:
-	cd /home/dingshuo/chat_server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.s
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.s
 .PHONY : chatserver.cpp.s
+
+chatservice.o: chatservice.cpp.o
+
+.PHONY : chatservice.o
+
+# target to build an object file
+chatservice.cpp.o:
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o
+.PHONY : chatservice.cpp.o
+
+chatservice.i: chatservice.cpp.i
+
+.PHONY : chatservice.i
+
+# target to preprocess a source file
+chatservice.cpp.i:
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.i
+.PHONY : chatservice.cpp.i
+
+chatservice.s: chatservice.cpp.s
+
+.PHONY : chatservice.s
+
+# target to generate assembly for a file
+chatservice.cpp.s:
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.s
+.PHONY : chatservice.cpp.s
 
 main.o: main.cpp.o
 
@@ -158,7 +185,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/dingshuo/chat_server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/main.cpp.o
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -167,7 +194,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/dingshuo/chat_server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/main.cpp.i
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -176,7 +203,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/dingshuo/chat_server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/main.cpp.s
+	cd /home/dingshuo/Chat_Server/build && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -191,6 +218,9 @@ help:
 	@echo "... chatserver.o"
 	@echo "... chatserver.i"
 	@echo "... chatserver.s"
+	@echo "... chatservice.o"
+	@echo "... chatservice.i"
+	@echo "... chatservice.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -205,6 +235,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/dingshuo/chat_server/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/dingshuo/Chat_Server/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

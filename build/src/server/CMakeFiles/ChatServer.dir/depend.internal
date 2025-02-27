@@ -3,7 +3,14 @@
 
 src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o
  ../include/server/chatserver.hpp
- /home/dingshuo/chat_server/src/server/chatserver.cpp
+ ../include/server/chatservice.hpp
+ ../thirdparty/json.hpp
+ /home/dingshuo/Chat_Server/src/server/chatserver.cpp
+src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o
+ ../include/public.hpp
+ ../include/server/chatservice.hpp
+ ../thirdparty/json.hpp
+ /home/dingshuo/Chat_Server/src/server/chatservice.cpp
 src/server/CMakeFiles/ChatServer.dir/main.cpp.o
  ../include/server/chatserver.hpp
- /home/dingshuo/chat_server/src/server/main.cpp
+ /home/dingshuo/Chat_Server/src/server/main.cpp

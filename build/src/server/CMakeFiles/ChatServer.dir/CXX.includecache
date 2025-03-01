@@ -40,45 +40,45 @@ mysql/mysql.h
 string
 -
 
-../include/server/friendmodel.hpp
+../include/server/model/friendmodel.hpp
 vector
 -
 user.hpp
-../include/server/user.hpp
+../include/server/model/user.hpp
 
-../include/server/group.hpp
+../include/server/model/group.hpp
 string
 -
 vector
 -
 groupuser.hpp
-../include/server/groupuser.hpp
+../include/server/model/groupuser.hpp
 
-../include/server/groupmodel.hpp
+../include/server/model/groupmodel.hpp
 group.hpp
-../include/server/group.hpp
+../include/server/model/group.hpp
 string
 -
 vector
 -
 
-../include/server/groupuser.hpp
+../include/server/model/groupuser.hpp
 user.hpp
-../include/server/user.hpp
+../include/server/model/user.hpp
 
-../include/server/offlinemessagemodel.hpp
+../include/server/model/offlinemessagemodel.hpp
 vector
 -
 string
 -
 
-../include/server/user.hpp
+../include/server/model/user.hpp
 string
 -
 
-../include/server/usermodel.hpp
+../include/server/model/usermodel.hpp
 user.hpp
-../include/server/user.hpp
+../include/server/model/user.hpp
 
 ../thirdparty/json.hpp
 algorithm
@@ -488,24 +488,6 @@ muduo/base/Logging.h
 vector
 -
 
-/home/dingshuo/Chat_Server/src/server/db/db.cpp
-db.h
-/home/dingshuo/Chat_Server/src/server/db/db.h
-muduo/base/Logging.h
--
-
-/home/dingshuo/Chat_Server/src/server/friendmodel.cpp
-friendmodel.hpp
-/home/dingshuo/Chat_Server/src/server/friendmodel.hpp
-db.h
-/home/dingshuo/Chat_Server/src/server/db.h
-
-/home/dingshuo/Chat_Server/src/server/groupmodel.cpp
-groupmodel.hpp
-/home/dingshuo/Chat_Server/src/server/groupmodel.hpp
-db.h
-/home/dingshuo/Chat_Server/src/server/db.h
-
 /home/dingshuo/Chat_Server/src/server/main.cpp
 chatserver.hpp
 /home/dingshuo/Chat_Server/src/server/chatserver.hpp
@@ -516,17 +498,29 @@ iostream
 signal.h
 -
 
-/home/dingshuo/Chat_Server/src/server/offlinemessagemodel.cpp
-offlinemessagemodel.hpp
-/home/dingshuo/Chat_Server/src/server/offlinemessagemodel.hpp
+/home/dingshuo/Chat_Server/src/server/model/friendmodel.cpp
+friendmodel.hpp
+/home/dingshuo/Chat_Server/src/server/model/friendmodel.hpp
 db.h
-/home/dingshuo/Chat_Server/src/server/db.h
+/home/dingshuo/Chat_Server/src/server/model/db.h
 
-/home/dingshuo/Chat_Server/src/server/usermodel.cpp
-usermodel.hpp
-/home/dingshuo/Chat_Server/src/server/usermodel.hpp
+/home/dingshuo/Chat_Server/src/server/model/groupmodel.cpp
+groupmodel.hpp
+/home/dingshuo/Chat_Server/src/server/model/groupmodel.hpp
 db.h
-/home/dingshuo/Chat_Server/src/server/db.h
+/home/dingshuo/Chat_Server/src/server/model/db.h
+
+/home/dingshuo/Chat_Server/src/server/model/offlinemessagemodel.cpp
+offlinemessagemodel.hpp
+/home/dingshuo/Chat_Server/src/server/model/offlinemessagemodel.hpp
+db.h
+/home/dingshuo/Chat_Server/src/server/model/db.h
+
+/home/dingshuo/Chat_Server/src/server/model/usermodel.cpp
+usermodel.hpp
+/home/dingshuo/Chat_Server/src/server/model/usermodel.hpp
+db.h
+/home/dingshuo/Chat_Server/src/server/model/db.h
 iostream
 -
 

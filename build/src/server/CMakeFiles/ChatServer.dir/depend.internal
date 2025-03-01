@@ -5,6 +5,9 @@ src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o
  ../include/server/chatserver.hpp
  ../include/server/chatservice.hpp
  ../include/server/friendmodel.hpp
+ ../include/server/group.hpp
+ ../include/server/groupmodel.hpp
+ ../include/server/groupuser.hpp
  ../include/server/offlinemessagemodel.hpp
  ../include/server/user.hpp
  ../include/server/usermodel.hpp
@@ -14,6 +17,9 @@ src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o
  ../include/public.hpp
  ../include/server/chatservice.hpp
  ../include/server/friendmodel.hpp
+ ../include/server/group.hpp
+ ../include/server/groupmodel.hpp
+ ../include/server/groupuser.hpp
  ../include/server/offlinemessagemodel.hpp
  ../include/server/user.hpp
  ../include/server/usermodel.hpp
@@ -27,10 +33,20 @@ src/server/CMakeFiles/ChatServer.dir/friendmodel.cpp.o
  ../include/server/friendmodel.hpp
  ../include/server/user.hpp
  /home/dingshuo/Chat_Server/src/server/friendmodel.cpp
+src/server/CMakeFiles/ChatServer.dir/groupmodel.cpp.o
+ ../include/server/db/db.h
+ ../include/server/group.hpp
+ ../include/server/groupmodel.hpp
+ ../include/server/groupuser.hpp
+ ../include/server/user.hpp
+ /home/dingshuo/Chat_Server/src/server/groupmodel.cpp
 src/server/CMakeFiles/ChatServer.dir/main.cpp.o
  ../include/server/chatserver.hpp
  ../include/server/chatservice.hpp
  ../include/server/friendmodel.hpp
+ ../include/server/group.hpp
+ ../include/server/groupmodel.hpp
+ ../include/server/groupuser.hpp
  ../include/server/offlinemessagemodel.hpp
  ../include/server/user.hpp
  ../include/server/usermodel.hpp

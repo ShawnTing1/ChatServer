@@ -62,7 +62,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
             json response;
             response["msgid"] = LOGIN_MSG_ACK;
             response["errno"] = 2;
-            response["errmsg"] = "该用户已经登陆，请勿重复登陆";
+            response["errmsg"] = "The user has already logged in";
             conn->send(response.dump());
             return;
         } else {
@@ -111,7 +111,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
         json response;
         response["msgid"] = LOGIN_MSG_ACK;
         response["errno"] = 1;
-        response["errmsg"] = "用户名或密码错误";
+        response["errmsg"] = "The user name or password is wrong";
         conn->send(response.dump());
     }
 }
@@ -140,7 +140,7 @@ void ChatService::reg(const TcpConnectionPtr &conn, json &js, Timestamp time)
         json response;
         response["msgid"] = REG_MSG_ACK;
         response["errno"] = 1;
-        response["errmsg"] = "注册失败";
+        response["errmsg"] = "Registration failed";
         conn->send(response.dump());
     }
 }

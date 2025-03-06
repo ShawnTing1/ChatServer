@@ -3,6 +3,7 @@
 
 #include <muduo/base/Logging.h>
 #include <vector>
+#include <iostream>
 
 using namespace muduo;
 using namespace std;
@@ -173,7 +174,8 @@ void ChatService::clientCloseException(const TcpConnectionPtr& conn)
 
 void ChatService::oneChat(const TcpConnectionPtr &conn, json &js, Timestamp time)
 {
-    // LOG_INFO << "Received JSON: " << js.dump();
+    LOG_INFO << "Received JSON: " << js.dump();
+    cout << "Received JSON: " << js.dump() << endl;
     int toid = js["to"].get<int>();
     {
         lock_guard<mutex> lock(_connMutex);

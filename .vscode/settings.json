@@ -6,6 +6,7 @@
         "memory": "cpp",
         "type_traits": "cpp",
         "valarray": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "iostream": "cpp"
     }
 }

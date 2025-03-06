@@ -27,6 +27,8 @@ vector<Group> g_currentUserGroupList;
 
 // 显示当前登陆成功用户的基本信息
 void showCurrentUserData();
+// 控制主菜单页面程序
+bool isMainMenuRunning = false;
 
 // 接收服务器消息线程
 void readTaskHandler(int clientfd);
@@ -120,6 +122,9 @@ int main(int argc, char** argv)
                             g_currentUser.setName(response_js["name"]);
                             // 记录当前登陆用户的好友列表信息
                             if (response_js.contains("friends")) {
+                                // 初始化
+                                g_currentUserFriendList.clear();
+
                                 vector<string> vec = response_js["friends"];
                                 for (string& str : vec) {
                                     json js = json::parse(str);
@@ -133,6 +138,9 @@ int main(int argc, char** argv)
 
                             // 记录当前登陆用户的群组列表信息
                             if (response_js.contains("groups")) {
+                                // 初始化
+                                g_currentUserGroupList.clear();
+
                                 vector<string> vec1 = response_js["groups"];
                                 for (string& groupstr : vec1) {
                                     json grpjs = json::parse(groupstr);
@@ -177,10 +185,15 @@ int main(int argc, char** argv)
                                 cout << "======================================================" << endl;
                             }
 
-                            // 登陆成功，启动接收线程
-                            thread readTask(readTaskHandler, clientfd);
-                            readTask.detach();
+                            // 登陆成功，启动接收线程, 该线程只启动一次
+                            static int threadnum = 0;
+                            if (threadnum == 0) {
+                                thread readTask(readTaskHandler, clientfd);
+                                readTask.detach();
+                                threadnum++;
+                            }
                             // 进入主聊天页面
+                            isMainMenuRunning = true;
                             mainMenu(clientfd);
                         }
                     }
@@ -243,9 +256,9 @@ int main(int argc, char** argv)
 void readTaskHandler(int clientfd)
 {
     cout << "readTaskHandler thread start..." << endl;
-    for(;;) {
+    for (;;) {
         char buffer[1024] = {0};
-        int len = recv(clientfd, buffer, 1024, 0);
+        int len = recv(clientfd, buffer, 1024, 0); // 阻塞等待服务器发送数据
         if (len == -1 || len == 0) {
             cerr << "recv server data error!" << endl;
             close(clientfd);
@@ -348,8 +361,8 @@ unordered_map<string, function<void(int, string)>> commandHandlerMap = {
     {"addfriend", addFriend},
     {"creategroup", createGroup},
     {"addgroup", addGroup},
-    {"groupchat", groupChat}
-    // {"loginout", loginout}
+    {"groupchat", groupChat},
+    {"loginout", loginout}
 };
 
 
@@ -360,7 +373,7 @@ void mainMenu(int clientfd)
     help();
 
     char buffer[1024] = {0};
-    for (;;) {
+    while (isMainMenuRunning) {
         cin.getline(buffer, 1024);
         string commandbuf(buffer);
         string command;
@@ -504,4 +517,19 @@ void groupChat(int clientfd, string commandbuf)
     if (len == -1) {
         cerr << "send groupchat message error!" << endl;
     }
+}
+
+// loginout command handler
+void loginout(int clientfd, string commandbuf)
+{
+    json js;
+    js["msgid"] = LOGINOUT_MSG;
+    js["id"] = g_currentUser.getId();
+    string request = js.dump();
+
+    int len = send(clientfd, request.c_str(), strlen(request.c_str()) + 1, 0);
+    if (len == -1) {
+        cerr << "send loginout message error!" << endl;
+    }
+    isMainMenuRunning = false;
 }

@@ -163,13 +163,16 @@ int main(int argc, char** argv)
                                 cout << "=====================offline message=====================" << endl;
                                 vector<string> vec = response_js["offlinemsg"];
                                 for (string& str : vec) {
-                                    // 解析 JSON 字符串
                                     json js = json::parse(str);
-                                    
-                                    // 输出信息
-                                    cout << js["time"].get<string>() << " [" << js["id"] << "] " 
-                                         << js["name"].get<string>() << " said: " 
-                                         << js["msg"].get<string>() << endl;
+                                    if (ONE_CHAT_MSG == js["msgid"].get<int>()) {
+                                        cout << js["time"].get<string>() << " [" << js["id"] << "] " 
+                                            << js["name"].get<string>() << " said: " 
+                                            << js["msg"].get<string>() << endl;
+                                    } else {
+                                        cout << "Group Message: " << js["time"].get<string>() << " [" << js["groupid"] << "] " 
+                                            << js["name"].get<string>() << " said: " 
+                                            << js["msg"].get<string>() << endl;
+                                    }
                                 }
                                 cout << "======================================================" << endl;
                             }
@@ -250,9 +253,17 @@ void readTaskHandler(int clientfd)
         }
         // 解析服务器发送的json数据
         json js = json::parse(buffer);
-        cout << "server send data: " << js.dump() << endl;
-        if (ONE_CHAT_MSG == js["msgid"].get<int>()) {
-            cout << js["time"].get<string>() << " [" << js["id"] << "]" << js["name"].get<string>() << " said: " << js["msg"].get<string>() << endl;
+        int msgtype = js["msgid"].get<int>();
+        if (ONE_CHAT_MSG == msgtype) {
+            cout << js["time"].get<string>() << " [" << js["id"] << "] " 
+                 << js["name"].get<string>() << " said: " 
+                 << js["msg"].get<string>() << endl;
+                 continue;
+        }
+        if (GROUP_CHAT_MSG == msgtype) {
+            cout << "Group Message: " << js["time"].get<string>() << " [" << js["groupid"] << "] " 
+                 << js["name"].get<string>() << " said: " 
+                 << js["msg"].get<string>() << endl;
             continue;
         }
     }
@@ -334,10 +345,10 @@ unordered_map<string, string> commandMap = {
 unordered_map<string, function<void(int, string)>> commandHandlerMap = {
     {"help", help},
     {"chat", chat},
-    {"addfriend", addFriend}
-    // {"creategroup", createGroup},
-    // {"addgroup", addGroup},
-    // {"groupchat", groupChat},
+    {"addfriend", addFriend},
+    {"creategroup", createGroup},
+    {"addgroup", addGroup},
+    {"groupchat", groupChat}
     // {"loginout", loginout}
 };
 
@@ -426,5 +437,71 @@ void addFriend(int clientfd, string commandbuf)
     int len = send(clientfd, request.c_str(), strlen(request.c_str()) + 1, 0);
     if (len == -1) {
         cerr << "send addfriend message error!" << endl;
+    }
+}
+
+// creategroup command handler  format: groupname: groupdesc
+void createGroup(int clientfd, string commandbuf)
+{
+    int idx = commandbuf.find(":");
+    if (-1 == idx) {
+        cerr << "creategroup command invalid!" << endl;
+        return;
+    }
+
+    string groupname = commandbuf.substr(0, idx);
+    string groupdesc = commandbuf.substr(idx + 1, commandbuf.size() - idx);
+    json js;
+    js["msgid"] = CREATE_GROUP_MSG;
+    js["id"] = g_currentUser.getId();
+    js["groupname"] = groupname;
+    js["groupdesc"] = groupdesc;
+    string request = js.dump();
+
+    int len = send(clientfd, request.c_str(), strlen(request.c_str()) + 1, 0);
+    if (len == -1) {
+        cerr << "send creategroup message error!" << endl;
+    }
+}
+
+// addgroup command handler format: groupid
+void addGroup(int clientfd, string commandbuf)
+{
+    int groupid = atoi(commandbuf.c_str());
+    json js;
+    js["msgid"] = ADD_GROUP_MSG;
+    js["id"] = g_currentUser.getId();
+    js["groupid"] = groupid;
+    string request = js.dump();
+
+    int len = send(clientfd, request.c_str(), strlen(request.c_str()) + 1, 0);
+    if (len == -1) {
+        cerr << "send addgroup message error!" << endl;
+    }
+}
+
+// groupchat command handler format: groupid: message
+void groupChat(int clientfd, string commandbuf)
+{
+    int idx = commandbuf.find(":");
+    if (-1 == idx) {
+        cerr << "groupchat command invalid!" << endl;
+        return;
+    }
+
+    int groupid = atoi(commandbuf.substr(0, idx).c_str());
+    string message = commandbuf.substr(idx + 1, commandbuf.size() - idx);
+    json js;
+    js["msgid"] = GROUP_CHAT_MSG;
+    js["id"] = g_currentUser.getId();
+    js["name"] = g_currentUser.getName();
+    js["groupid"] = groupid;
+    js["msg"] = message;
+    js["time"] = getCurrentTime();
+    string request = js.dump();
+
+    int len = send(clientfd, request.c_str(), strlen(request.c_str()) + 1, 0);
+    if (len == -1) {
+        cerr << "send groupchat message error!" << endl;
     }
 }

@@ -12,17 +12,33 @@ mysql/mysql.h
 string
 -
 
-../include/server/model/offlinemessagemodel.hpp
+../include/server/model/group.hpp
+string
+-
 vector
 -
+groupuser.hpp
+../include/server/model/groupuser.hpp
+
+../include/server/model/groupmodel.hpp
+group.hpp
+../include/server/model/group.hpp
+string
+-
+vector
+-
+
+../include/server/model/groupuser.hpp
+user.hpp
+../include/server/model/user.hpp
+
+../include/server/model/user.hpp
 string
 -
 
-/home/dingshuo/Chat_Server/src/server/model/offlinemessagemodel.cpp
-offlinemessagemodel.hpp
-/home/dingshuo/Chat_Server/src/server/model/offlinemessagemodel.hpp
+/home/dingshuo/Chat_Server/src/server/model/groupmodel.cpp
+groupmodel.hpp
+/home/dingshuo/Chat_Server/src/server/model/groupmodel.hpp
 db.h
 /home/dingshuo/Chat_Server/src/server/model/db.h
-iostream
--
 

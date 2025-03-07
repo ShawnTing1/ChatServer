@@ -60,15 +60,15 @@ include src/client/CMakeFiles/ChatClient.dir/flags.make
 src/client/CMakeFiles/ChatClient.dir/main.cpp.o: src/client/CMakeFiles/ChatClient.dir/flags.make
 src/client/CMakeFiles/ChatClient.dir/main.cpp.o: ../src/client/main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dingshuo/Chat_Server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/client/CMakeFiles/ChatClient.dir/main.cpp.o"
-	cd /home/dingshuo/Chat_Server/build/src/client && /usr/bin/g++-8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ChatClient.dir/main.cpp.o -c /home/dingshuo/Chat_Server/src/client/main.cpp
+	cd /home/dingshuo/Chat_Server/build/src/client && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ChatClient.dir/main.cpp.o -c /home/dingshuo/Chat_Server/src/client/main.cpp
 
 src/client/CMakeFiles/ChatClient.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ChatClient.dir/main.cpp.i"
-	cd /home/dingshuo/Chat_Server/build/src/client && /usr/bin/g++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dingshuo/Chat_Server/src/client/main.cpp > CMakeFiles/ChatClient.dir/main.cpp.i
+	cd /home/dingshuo/Chat_Server/build/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dingshuo/Chat_Server/src/client/main.cpp > CMakeFiles/ChatClient.dir/main.cpp.i
 
 src/client/CMakeFiles/ChatClient.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ChatClient.dir/main.cpp.s"
-	cd /home/dingshuo/Chat_Server/build/src/client && /usr/bin/g++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dingshuo/Chat_Server/src/client/main.cpp -o CMakeFiles/ChatClient.dir/main.cpp.s
+	cd /home/dingshuo/Chat_Server/build/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dingshuo/Chat_Server/src/client/main.cpp -o CMakeFiles/ChatClient.dir/main.cpp.s
 
 # Object files for target ChatClient
 ChatClient_OBJECTS = \

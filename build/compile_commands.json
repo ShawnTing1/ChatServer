@@ -1,47 +1,52 @@
 [
 {
   "directory": "/home/dingshuo/Chat_Server/build/src/server",
-  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/chatserver.cpp.o -c /home/dingshuo/Chat_Server/src/server/chatserver.cpp",
+  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/include/server/redis -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/chatserver.cpp.o -c /home/dingshuo/Chat_Server/src/server/chatserver.cpp",
   "file": "/home/dingshuo/Chat_Server/src/server/chatserver.cpp"
 },
 {
   "directory": "/home/dingshuo/Chat_Server/build/src/server",
-  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/chatservice.cpp.o -c /home/dingshuo/Chat_Server/src/server/chatservice.cpp",
+  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/include/server/redis -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/chatservice.cpp.o -c /home/dingshuo/Chat_Server/src/server/chatservice.cpp",
   "file": "/home/dingshuo/Chat_Server/src/server/chatservice.cpp"
 },
 {
   "directory": "/home/dingshuo/Chat_Server/build/src/server",
-  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/main.cpp.o -c /home/dingshuo/Chat_Server/src/server/main.cpp",
+  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/include/server/redis -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/main.cpp.o -c /home/dingshuo/Chat_Server/src/server/main.cpp",
   "file": "/home/dingshuo/Chat_Server/src/server/main.cpp"
 },
 {
   "directory": "/home/dingshuo/Chat_Server/build/src/server",
-  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/db/db.cpp.o -c /home/dingshuo/Chat_Server/src/server/db/db.cpp",
+  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/include/server/redis -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/db/db.cpp.o -c /home/dingshuo/Chat_Server/src/server/db/db.cpp",
   "file": "/home/dingshuo/Chat_Server/src/server/db/db.cpp"
 },
 {
   "directory": "/home/dingshuo/Chat_Server/build/src/server",
-  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o -c /home/dingshuo/Chat_Server/src/server/model/friendmodel.cpp",
+  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/include/server/redis -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o -c /home/dingshuo/Chat_Server/src/server/model/friendmodel.cpp",
   "file": "/home/dingshuo/Chat_Server/src/server/model/friendmodel.cpp"
 },
 {
   "directory": "/home/dingshuo/Chat_Server/build/src/server",
-  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o -c /home/dingshuo/Chat_Server/src/server/model/groupmodel.cpp",
+  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/include/server/redis -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o -c /home/dingshuo/Chat_Server/src/server/model/groupmodel.cpp",
   "file": "/home/dingshuo/Chat_Server/src/server/model/groupmodel.cpp"
 },
 {
   "directory": "/home/dingshuo/Chat_Server/build/src/server",
-  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o -c /home/dingshuo/Chat_Server/src/server/model/offlinemessagemodel.cpp",
+  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/include/server/redis -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o -c /home/dingshuo/Chat_Server/src/server/model/offlinemessagemodel.cpp",
   "file": "/home/dingshuo/Chat_Server/src/server/model/offlinemessagemodel.cpp"
 },
 {
   "directory": "/home/dingshuo/Chat_Server/build/src/server",
-  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/model/usermodel.cpp.o -c /home/dingshuo/Chat_Server/src/server/model/usermodel.cpp",
+  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/include/server/redis -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/model/usermodel.cpp.o -c /home/dingshuo/Chat_Server/src/server/model/usermodel.cpp",
   "file": "/home/dingshuo/Chat_Server/src/server/model/usermodel.cpp"
 },
 {
+  "directory": "/home/dingshuo/Chat_Server/build/src/server",
+  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/include/server/redis -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatServer.dir/redis/redis.cpp.o -c /home/dingshuo/Chat_Server/src/server/redis/redis.cpp",
+  "file": "/home/dingshuo/Chat_Server/src/server/redis/redis.cpp"
+},
+{
   "directory": "/home/dingshuo/Chat_Server/build/src/client",
-  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatClient.dir/main.cpp.o -c /home/dingshuo/Chat_Server/src/client/main.cpp",
+  "command": "/usr/bin/g++-8   -I/home/dingshuo/Chat_Server/include -I/home/dingshuo/Chat_Server/include/server -I/home/dingshuo/Chat_Server/include/server/model -I/home/dingshuo/Chat_Server/include/server/db -I/home/dingshuo/Chat_Server/include/server/redis -I/home/dingshuo/Chat_Server/thirdparty   -g -g   -o CMakeFiles/ChatClient.dir/main.cpp.o -c /home/dingshuo/Chat_Server/src/client/main.cpp",
   "file": "/home/dingshuo/Chat_Server/src/client/main.cpp"
 }
 ]

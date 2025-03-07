@@ -61,6 +61,12 @@
 				"file" : 1,
 				"line" : 15,
 				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 16,
+				"parent" : 2
 			}
 		]
 	},
@@ -93,6 +99,10 @@
 				},
 				{
 					"backtrace" : 7,
+					"path" : "/home/dingshuo/Chat_Server/include/server/redis"
+				},
+				{
+					"backtrace" : 8,
 					"path" : "/home/dingshuo/Chat_Server/thirdparty"
 				}
 			],

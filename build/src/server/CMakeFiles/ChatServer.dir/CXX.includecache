@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+../include/public.hpp
+
 ../include/server/chatserver.hpp
 muduo/net/TcpServer.h
 -
@@ -31,6 +33,8 @@ friendmodel.hpp
 ../include/server/friendmodel.hpp
 groupmodel.hpp
 ../include/server/groupmodel.hpp
+redis.hpp
+../include/server/redis.hpp
 
 ../include/server/model/friendmodel.hpp
 vector
@@ -71,6 +75,14 @@ string
 ../include/server/model/usermodel.hpp
 user.hpp
 ../include/server/model/user.hpp
+
+../include/server/redis/redis.hpp
+hiredis/hiredis.h
+-
+thread
+-
+functional
+-
 
 ../thirdparty/json.hpp
 algorithm
@@ -468,5 +480,33 @@ chatservice.hpp
 functional
 -
 muduo/base/Logging.h
+-
+
+/home/dingshuo/Chat_Server/src/server/chatservice.cpp
+chatservice.hpp
+/home/dingshuo/Chat_Server/src/server/chatservice.hpp
+public.hpp
+/home/dingshuo/Chat_Server/src/server/public.hpp
+muduo/base/Logging.h
+-
+vector
+-
+iostream
+-
+
+/home/dingshuo/Chat_Server/src/server/main.cpp
+chatserver.hpp
+/home/dingshuo/Chat_Server/src/server/chatserver.hpp
+chatservice.hpp
+/home/dingshuo/Chat_Server/src/server/chatservice.hpp
+iostream
+-
+signal.h
+-
+
+/home/dingshuo/Chat_Server/src/server/redis/redis.cpp
+redis.hpp
+/home/dingshuo/Chat_Server/src/server/redis/redis.hpp
+iostream
 -
 

@@ -1,21 +1,22 @@
 #include "db.h"
+#include "public.hpp"
 #include <muduo/base/Logging.h>
 
 using namespace std;
 
 // 服务器配置信息
-static string server = "127.0.0.1";
-static string user = "root";
-static string password = "12345678";
-static string dbname = "chat";
+// static string server = "127.0.0.1";
+// static string user = "root";
+// static string password = "12345678";
+// static string dbname = "chat";
 
 // 初始化数据库连接
-MySQL::MySQL()
+Connection::Connection()
 {
     _conn = mysql_init(nullptr);
 }
 // 释放数据库连接资源
-MySQL::~MySQL()
+Connection::~Connection()
 {
     if (_conn != nullptr)
     {
@@ -23,9 +24,9 @@ MySQL::~MySQL()
     }
 }
 // 连接数据库
-bool MySQL::connect()
+bool Connection::connect(string ip, unsigned short port, string user, string password, string dbname)
 {
-    MYSQL *p = mysql_real_connect(_conn, server.c_str(), user.c_str(), password.c_str(), dbname.c_str(), 3306, nullptr, 0);
+    MYSQL* p = mysql_real_connect(_conn, ip.c_str(), user.c_str(), password.c_str(), dbname.c_str(), port, nullptr, 0);
     if (p != nullptr)
     {
         // 设置字符集
@@ -40,7 +41,7 @@ bool MySQL::connect()
     return p;
 }
 // 更新操作
-bool MySQL::update(const string &sql)
+bool Connection::update(const string &sql)
 {
     if (mysql_query(_conn, sql.c_str()))
     {
@@ -50,7 +51,7 @@ bool MySQL::update(const string &sql)
     return true;
 }
 // 查询操作
-MYSQL_RES *MySQL::query(const string &sql)
+MYSQL_RES *Connection::query(const string &sql)
 {
     if (mysql_query(_conn, sql.c_str()))
     {
@@ -61,7 +62,7 @@ MYSQL_RES *MySQL::query(const string &sql)
 }
 
 
-MYSQL* MySQL::getConnection()
+MYSQL* Connection::getConnection()
 {
     return _conn;
 }

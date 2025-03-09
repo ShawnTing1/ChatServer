@@ -1,5 +1,6 @@
 #include "groupmodel.hpp"
 #include "db.h"
+#include "connectionPool.h"
 
     // 创建群组
     bool GroupModel::createGroup(Group &group)
@@ -8,10 +9,11 @@
         char sql[1024] = {0};
         sprintf(sql, "INSERT INTO AllGroup(groupname, groupdesc) VALUES('%s', '%s')", group.getName().c_str(), group.getDesc().c_str());
         // 2. 连接数据库
-        MySQL mysql;
-        if (mysql.connect()) {
-            if (mysql.update(sql)) {
-                group.setId(mysql_insert_id(mysql.getConnection()));
+        ConnectionPool *cp = ConnectionPool::GetInstance();
+        shared_ptr<Connection> sp = cp->getConnection();
+        if (sp) {
+            if (sp->update(sql)) {
+                group.setId(mysql_insert_id(sp->getConnection()));
                 return true;
             }
         }
@@ -25,9 +27,10 @@
         char sql[1024] = {0};
         sprintf(sql, "INSERT INTO GroupUser(userid, groupid, grouprole) VALUES(%d, %d, '%s')", userid, groupid, role.c_str());
         // 2. 连接数据库
-        MySQL mysql;
-        if (mysql.connect()) {
-            mysql.update(sql);
+        ConnectionPool *cp = ConnectionPool::GetInstance();
+        shared_ptr<Connection> sp = cp->getConnection();
+        if (sp) {
+            sp->update(sql);
         }
     }
     // 查询用户所在群组信息
@@ -43,9 +46,10 @@
 
         vector<Group> groupVec;
 
-        MySQL mysql;
-        if (mysql.connect()) {
-            MYSQL_RES *res = mysql.query(sql);
+        ConnectionPool *cp = ConnectionPool::GetInstance();
+        shared_ptr<Connection> sp = cp->getConnection();
+        if (sp) {
+            MYSQL_RES *res = sp->query(sql);
             if (res != nullptr) {
                 MYSQL_ROW row;
                 while ((row = mysql_fetch_row(res)) != nullptr) {
@@ -70,9 +74,10 @@
 
         // 2. 连接数据库
         vector<int> idVec;
-        MySQL mysql;
-        if (mysql.connect()) {
-            MYSQL_RES *res = mysql.query(sql);
+        ConnectionPool *cp = ConnectionPool::GetInstance();
+        shared_ptr<Connection> sp = cp->getConnection();
+        if (sp) {
+            MYSQL_RES *res = sp->query(sql);
             if (res != nullptr) {
                 MYSQL_ROW row;
                 while ((row = mysql_fetch_row(res)) != nullptr) {

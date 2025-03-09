@@ -1,5 +1,6 @@
 #include "offlinemessagemodel.hpp"
 #include "db.h"
+#include "connectionPool.h"
 
 #include <iostream>
 
@@ -10,10 +11,11 @@ void OfflineMsgModel::insert(int userid, string msg)
     char sql[1024] = {0};
     sprintf(sql, "insert into OfflineMessage values(%d, '%s')", userid, msg.c_str());
     // 2. 执行sql语句
-    MySQL mysql;
-    if (mysql.connect())
+    ConnectionPool *cp = ConnectionPool::GetInstance();
+    shared_ptr<Connection> sp = cp->getConnection();
+    if (sp)
     {
-        mysql.update(sql);
+        sp->update(sql);
     }
 }
 
@@ -24,10 +26,11 @@ void OfflineMsgModel::remove(int userid)
     char sql[1024] = {0};
     sprintf(sql, "delete from OfflineMessage where userid=%d", userid);
     // 2. 执行sql语句
-    MySQL mysql;
-    if (mysql.connect())
+    ConnectionPool *cp = ConnectionPool::GetInstance();
+    shared_ptr<Connection> sp = cp->getConnection();
+    if (sp)
     {
-        mysql.update(sql);
+        sp->update(sql);
     }
 }
 
@@ -39,10 +42,11 @@ vector<std::string> OfflineMsgModel::query(int userid)
     sprintf(sql, "select message from OfflineMessage where userid=%d", userid);
     // 2. 执行sql语句
     vector<string> vec;
-    MySQL mysql;
-    if (mysql.connect())
+    ConnectionPool *cp = ConnectionPool::GetInstance();
+    shared_ptr<Connection> sp = cp->getConnection();
+    if (sp)
     {
-        MYSQL_RES *res = mysql.query(sql);
+        MYSQL_RES *res = sp->query(sql);
         if (res != nullptr)
         {
             // 把userid用户的所有离线消息放入vec中返回
